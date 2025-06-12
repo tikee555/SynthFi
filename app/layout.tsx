@@ -3,30 +3,42 @@ import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
-import { WalletContextProvider } from "@/components/wallet-provider"
-
-// Import wallet adapter styles
-import "@solana/wallet-adapter-react-ui/styles.css"
+import { WalletProvider } from "@/contexts/wallet-context"
+import { Toaster } from "@/components/ui/toaster"
+// SynthFiHeader is a NAMED import
+import { SynthFiHeader } from "@/components/synthfi-header"
+// SynthFiFooter is a NAMED import
+import { SynthFiFooter } from "@/components/synthfi-footer"
 
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "SynthFi - Prompt-to-Protocol in Seconds",
+  title: "SynthFi - AI-Powered Solana Smart Contract Generation",
   description:
-    "Instantly generate audited Rust programs, AI-generated frontends, and launch with liquidity on Raydium.",
+    "Describe your DeFi idea in plain English and generate production-ready Solana smart contracts instantly with SynthFi.",
+  icons: {
+    icon: "/images/synthfi-logo.png",
+  },
     generator: 'v0.dev'
 }
 
 export default function RootLayout({
   children,
-}: {
+}: Readonly<{
   children: React.ReactNode
-}) {
+}>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <ThemeProvider attribute="class" defaultTheme="dark">
-          <WalletContextProvider>{children}</WalletContextProvider>
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${inter.className} bg-gradient-to-br from-[#00000A] to-[#0A0014] text-gray-100 flex flex-col min-h-screen`}
+      >
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={false} disableTransitionOnChange>
+          <WalletProvider>
+            <SynthFiHeader />
+            <main className="flex-grow">{children}</main>
+            <SynthFiFooter />
+            <Toaster />
+          </WalletProvider>
         </ThemeProvider>
       </body>
     </html>

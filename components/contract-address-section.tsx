@@ -1,20 +1,26 @@
-import { ExternalLink } from "lucide-react"
-import Link from "next/link"
-
 export function ContractAddressSection() {
   return (
-    <section className="py-16 px-4 md:px-8 bg-black border-t border-gray-800">
-      <div className="max-w-6xl mx-auto text-center">
-        <h2 className="text-2xl font-bold mb-6 text-white">Contract Address</h2>
-        <Link
-          href="https://explorer.solana.com/address/D9mendaps8MaMHtLz2w8Duum3FfamPh2yWX5owKZpump"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center text-purple-400 hover:text-purple-300 text-lg"
-        >
-          D9mendaps8MaMHtLz2w8Duum3FfamPh2yWX5owKZpump
-          <ExternalLink className="ml-2 h-4 w-4" />
-        </Link>
+    <section className="py-16">
+      <div className="max-w-screen-lg mx-auto px-4 text-center">
+        <h2 className="text-xl font-bold mb-4">Contract Address</h2>
+        <a href="#" className="text-purple-500 hover:text-purple-400 flex items-center justify-center">
+          D9mendapBMaMHLz2w8Dum3FfamPh2yWX5owKZpump
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="ml-2"
+          >
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+            <polyline points="15 3 21 3 21 9" />
+            <line x1="10" y1="14" x2="21" y2="3" />
+          </svg>
+        </a>
       </div>
     </section>
   )

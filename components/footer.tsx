@@ -1,57 +1,54 @@
-import Link from "next/link"
-import { Twitter, Github } from "lucide-react"
-
 export function Footer() {
-  const currentYear = new Date().getFullYear()
-
   return (
-    <footer className="py-12 px-4 md:px-8 bg-black border-t border-gray-800">
-      <div className="max-w-6xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          <div>
-            <h3 className="text-xl font-bold mb-4 text-white">SynthFi</h3>
-            <p className="text-gray-400">Prompt-to-Protocol in Seconds. Deployed on Solana.</p>
-            <p className="text-gray-500 mt-4">© {currentYear} SynthFi. All rights reserved.</p>
-          </div>
-
-          <div className="flex flex-col items-center justify-center">
-            <h3 className="text-xl font-bold mb-4 text-white">Connect</h3>
-            <div className="flex space-x-6">
-              <Link href="https://x.com/SynthFi_Hub" className="text-gray-400 hover:text-purple-400 transition-colors">
-                <Twitter className="h-6 w-6" />
-                <span className="sr-only">Twitter</span>
-              </Link>
-              <Link
-                href="https://github.com/tikee555/SynthFi"
-                className="text-gray-400 hover:text-purple-400 transition-colors"
-              >
-                <Github className="h-6 w-6" />
-                <span className="sr-only">GitHub</span>
-              </Link>
+    <footer className="bg-[#0a0d16] border-t border-gray-800 py-8">
+      <div className="container mx-auto px-4">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <div className="mb-4 md:mb-0">
+            <div className="text-purple-500 font-bold text-xl flex items-center">
+              <img src="/images/synthfi-logo.png" alt="SynthFi" className="h-6 mr-2" />
+              SynthFi
             </div>
+            <p className="text-gray-400 text-sm mt-2">Create Onchain Apps with Natural Language</p>
           </div>
 
-          <div>
-            <h3 className="text-xl font-bold mb-4 text-white">Resources</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link
-                  href="https://synthfi.gitbook.io/synthfi"
-                  className="text-gray-400 hover:text-purple-400 transition-colors"
-                >
-                  Documentation
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="https://dexscreener.com/solana/5ugeszurqxuappq8tsrnutq3dnvhgzf95tggy3q9lwxf"
-                  className="text-gray-400 hover:text-purple-400 transition-colors"
-                >
-                  Dexscreener
-                </Link>
-              </li>
-            </ul>
+          <div className="grid grid-cols-2 gap-x-12 gap-y-4 text-sm">
+            <a
+              href="https://synthfi.gitbook.io/synthfi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white"
+            >
+              Documentation
+            </a>
+            <a
+              href="https://x.com/SynthFi_Hub"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white"
+            >
+              X / Twitter
+            </a>
+            <a
+              href="https://dexscreener.com/solana/5ugeszurqxuappq8tsrnutq3dnvhgzf95tggy3q9lwxf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white"
+            >
+              Dexscreener
+            </a>
+            <a
+              href="https://synthfi.gitbook.io/synthfi"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-white"
+            >
+              GitBook
+            </a>
           </div>
+        </div>
+
+        <div className="mt-8 pt-6 border-t border-gray-800 text-center text-gray-400 text-sm">
+          &copy; {new Date().getFullYear()} SynthFi. All rights reserved.
         </div>
       </div>
     </footer>
